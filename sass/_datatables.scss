@@ -1,0 +1,110 @@
+// Styles for DataTables.js
+
+.dataTables_wrapper {
+
+    margin-bottom: 15px;
+
+    .top, .bottom {
+        @include clearfix();
+        
+        &, label, select, a {
+            font-size: 11px;
+        }
+    }
+
+    // --- Length Indicator
+    // ----------------------------------------
+    .dataTables_length { 
+        float: left; 
+        
+        select {
+            width: 60px;
+            margin: 0;
+        }
+    } // .dataTables_length
+
+    // --- Pagination Controls
+    // ----------------------------------------
+    .dataTables_paginate { 
+        float: right; 
+        
+        a {
+            cursor: pointer;
+            margin-left: 4px;
+            text-transform: uppercase;
+            
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    } // .dataTables_paginate
+    
+    // --- Info Display
+    // ----------------------------------------
+    .dataTables_info {
+        float: left;
+    }    
+
+    // --- Table
+    // ----------------------------------------
+    .dataTable {
+        font-size: 12px;
+        width: 100%;
+        background-color: transparent;
+        margin-bottom: 5px;
+
+        thead > tr > th,
+        tbody > tr > td {
+            padding: 5px 10px;
+            border-color: $white;
+            border-style: solid;
+        }
+        
+        thead > tr > th {
+            cursor: default;
+            background-color: $tableHeaderBGColor;
+            color: $tableHeaderFontColor;
+            font-weight: normal;
+            border-width: 0 1px 1px 1px;
+        }
+
+        tbody > tr > td {
+            border-width: 1px;
+            padding: 10px;
+            background-color: $tableCellBGColor;
+            color: $tableCellFontColor;
+        }
+
+        // --- Sorting styles
+        // ----------------------------------------
+        .sorting_asc, .sorting_desc, .sorting {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .sorting_asc, .sorting_desc {
+            background-color: $blueDark;
+        }
+
+        .sorting_asc::after, 
+        .sorting_desc::after {
+            position: absolute;
+            font-family: FontAwesome;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: inherit;
+            -webkit-font-smoothing: antialiased;
+            right: 4px;
+        }
+
+        .sorting_asc::after {
+            content: '';
+        }
+
+        .sorting_desc::after {
+            content: '';
+        }
+
+    } // .dataTable
+
+} // .dataTables_wrapper
