@@ -30,10 +30,33 @@ $orange:                #f89406 !default;
 $pink:                  #c3325f !default;
 $purple:                #7a43b6 !default;
 
+// Flat UI colors
+// -------------------------
+$midnightBlue: #2c3e50;
+$asphalt: #34495e;
+$blueFlat: #2980b9;
+$blueFlatLight: #3498db;
+$cloud: #ecf0f1;
+$turquoise: #1abc9c;
+$emerald: #2ecc71;
+$amethyst: #9b59b6;
+$carrot: #e67e22;
+$sunflower: #f1c40f;
+$red: #e74c3c;
+
+// --- Sidebar colors
+// ----------------------------------------
 $sidebarFontColor:  $white;
-$sidebarItemColor:  $gray;
-$sidebarItemHoverColor:  $grayDark;
-$sidebarItemActiveColor:  $blueDark;
+$sidebarItemColor:  $asphalt;
+$sidebarItemHoverColor:  $blueDark;
+$sidebarItemActiveColor:  $midnightBlue;
 $sidebarItemActiveFontColor:  $white;
-$sidebarItemActiveBorderColor:  $blue;
-$sidebarBGColor:  darken($sidebarItemColor, 5%);
+$sidebarItemActiveBorderColor:  $blueFlatLight;
+$sidebarBGColor:  darken($sidebarItemColor, 10%);
+
+// --- DataTable colors
+// ----------------------------------------
+$tableHeaderBGColor: $gray;
+$tableHeaderFontColor: $white;
+$tableCellBGColor: $cloud;
+$tableCellFontColor: $grayDark;
