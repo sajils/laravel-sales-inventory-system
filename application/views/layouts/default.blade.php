@@ -14,6 +14,8 @@
     @include('components.sidebar')
 
     <div class="content container-fluid">
+        
+        @include('components.breadcrumbs')
 
         @yield('content')
 
