@@ -109,6 +109,12 @@ Route::filter('auth', function()
 // Dashboard routes
 Route::get('/', array('as' => 'dashboard', 'uses' => 'home@dashboard'));
 
+// Temporary
+Route::get('/feed', array('as' => 'feed', 'uses' => 'home@dashboard'));
+Route::get('/branches', array('as' => 'branches', 'uses' => 'home@dashboard'));
+Route::get('/employees', array('as' => 'employees', 'uses' => 'home@dashboard'));
+Route::get('/products', array('as' => 'products', 'uses' => 'home@dashboard'));
+
 
 // User routes
 Route::get('/users', array('as' => 'users', 'uses' => 'user@all_users'));
