@@ -1,0 +1,1 @@
+<a href="#" class="btn btn-small btn-info">Edit</a> <a href="#" class="btn btn-small btn-danger">Delete</a>
