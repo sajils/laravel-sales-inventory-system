@@ -20,11 +20,15 @@ class Base_Controller extends Controller {
 
 		$this->setupLayout();
 
-		// Add default stylesheets
+		// Add default stylesheets and scripts
 		Asset::add('bootstrap', 'css/bootstrap.min.css');
-		Asset::add('bootstrap-responsive', 'css/bootstrap-responsive.min.css');
-		Asset::add('font-awesome', 'css/font-awesome.min.css');
-		Asset::add('master', 'css/master.css');
+		Asset::add('bootstrap-responsive', 'css/bootstrap-responsive.min.css', 'bootstrap');
+		Asset::add('font-awesome', 'css/font-awesome.min.css', 'bootstrap');
+		Asset::add('master', 'css/master.css', 'bootstrap');
+
+		Asset::add('config', 'js/config.js');
+        Asset::add('jQuery', 'js/jquery.min.js');
+		Asset::add('bootstrap-js', 'js/bootstrap.min.js', 'jquery');
 	}
 
 	/**
