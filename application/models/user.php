@@ -1,6 +1,6 @@
 <?php
 
-class User extends Eloquent{
+class User extends Basemodel{
     /**
      * The database table used by the model.
      *
@@ -10,8 +10,9 @@ class User extends Eloquent{
 
     public static $rules = array(
         'username' => 'required|unique:users|alpha_dash|min:4',
+        'email' => 'required|unique:users|email',
         'password' => 'required|alpha_num|between:4,8|confirmed',
-        'password_conf' => 'required|alpha_num|betweek:4,8'
+        'password_confirmation' => 'alpha_num|between:4,8'
     );
 
 }

@@ -114,19 +114,42 @@ Route::get('/feed', array('as' => 'feed', 'uses' => 'home@dashboard'));
 Route::get('/branches', array('as' => 'branches', 'uses' => 'home@dashboard'));
 Route::get('/employees', array('as' => 'employees', 'uses' => 'home@dashboard'));
 Route::get('/products', array('as' => 'products', 'uses' => 'home@dashboard'));
-
+Route::get('/reports', array('as' => 'reports', 'uses' => 'home@dashboard'));
+Route::get('/settings', array('as' => 'settings', 'uses' => 'home@dashboard'));
 
 // User routes
 Route::get('/users', array('as' => 'users', 'uses' => 'user@all_users'));
-Route::post('/users', array('as' => 'get_users', 'uses' => 'user@all'));
+Route::post('/users', array('as' => 'users.post', 'uses' => 'user@all'));
 
-Route::get('/register', array('as' => 'register', 'uses' => 'user@register'));
+Route::get('user/login', function(){ 
+    
+    Asset::add('bootstrap', 'css/bootstrap.min.css');
+    Asset::add('bootstrap-responsive', 'css/bootstrap-responsive.min.css', 'bootstrap');
+    Asset::add('login', 'css/login.css');
+
+    return View::make('users.login'); 
+});
+Route::get('user/logout', array('as' => 'logout', 'uses' => 'user@logout'));
+
+Route::post('user/login', array('as' => 'login', 'uses' => 'user@login'));
+
+Route::get('register', function(){ 
+    
+    Asset::add('bootstrap', 'css/bootstrap.min.css');
+    Asset::add('bootstrap-responsive', 'css/bootstrap-responsive.min.css', 'bootstrap');
+    Asset::add('register', 'css/register.css');
+
+    return View::make('users.register'); 
+});
+Route::post('register', array('as' => 'register', 'uses' => 'user@register'));
 
 // Generate a config.js file. Pretty neat.
 Route::get('js/config.js', function() {
-    $config = array(
-        'BASE' => URL::base(),
-    );
+    // $config = array(
+    //     'BASE' => URL::base(),
+    // );
+    
+    $config['BASE'] = URL::base();
 
     $view = View::make('components.js_globals')
         ->with('config', $config)
