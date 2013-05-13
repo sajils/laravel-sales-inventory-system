@@ -1,0 +1,17 @@
+@import "variables";
+@import "mixins";
+
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    @include gradient-directional($blue, $grayDarker);
+}
+
+.registration-container{
+    margin-top: 185px;    
+}
