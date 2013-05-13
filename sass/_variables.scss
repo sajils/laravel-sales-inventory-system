@@ -29,3 +29,11 @@ $yellow:                #ffc40d !default;
 $orange:                #f89406 !default;
 $pink:                  #c3325f !default;
 $purple:                #7a43b6 !default;
+
+$sidebarFontColor:  $white;
+$sidebarItemColor:  $gray;
+$sidebarItemHoverColor:  $grayDark;
+$sidebarItemActiveColor:  $blueDark;
+$sidebarItemActiveFontColor:  $white;
+$sidebarItemActiveBorderColor:  $blue;
+$sidebarBGColor:  darken($sidebarItemColor, 5%);
