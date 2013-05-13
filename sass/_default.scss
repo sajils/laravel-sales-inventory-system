@@ -1,0 +1,62 @@
+// Styles for the default Blade layout
+
+.topbar.navbar{
+    top: 0px;
+    position: fixed;
+    border-top: 2px solid $blue;
+    
+    .brand {
+        font-size: small;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-inner {
+        min-height: 25px;
+    }
+
+    .nav > li > a {
+        padding-top: 10px; 
+        padding-bottom: 10px; 
+    }
+}
+
+.nav-list.affix {
+    top: 43px;
+    -webkit-transform: translateZ(0); // Fix the rendering issue when clicking on local anchor tags
+    background-color: darken($gray, 5%);
+    width: 160px;
+    height: 100%;
+        
+    li > a {
+        position: relative;
+        background-color: $gray;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 32px;
+        color: $white;
+        text-shadow: none;
+        
+        i { font-size: 14px; }
+        
+        &:hover {
+            color: $white;
+            background-color: $grayDark;
+        }
+    }
+
+    li { margin-bottom: 1px; }
+
+    li.active > a {
+        border-left: 4px solid $blue;
+        color: $white;
+        background-color: $blueDark;
+        &:hover {
+            background-color: $grayDark;
+        }
+
+        &::after{
+            @include fancy-wedge();
+        }   
+    }
+}

@@ -1,0 +1,13 @@
+@import "variables";
+@import "mixins";
+
+body {
+    margin-top: 55px;
+    margin-bottom: 80px;
+}
+
+.content { 
+    margin-left: 180px;
+}
+
+@import "default"
